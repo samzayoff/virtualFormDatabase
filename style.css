@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background:url(./pexels-abdoo-31759172.jpg);
+    background-position: center;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.headline {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    font-size: x-large;
+}
+
+.headline h1 {
+    padding: 20px;
+    filter: drop-shadow(0px 0px 5px rgb(255, 32, 32));
+    box-shadow: 0px 0px 40px rgb(0, 0, 0);
+}
+
+.sections {
+    display: flex; 
+    flex-wrap: wrap;  /* Using Flexbox to divide sections into two equal parts */
+    justify-content: space-between;  /* Ensure space is distributed equally */
+    gap: 20px;      /* Optional: space between the two divs */
+    padding: 20px;  /* Optional: adds padding around the container */
+    box-sizing: border-box;  /* Ensures padding doesn't affect width */
+}
+
+.formBody {
+    max-width: 600px;
+    height: 85vh;
+    /* background-image: url(./blurred-restaurant-background_893571-15162.avif); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-radius: 15px;
+    z-index: 1;
+    flex: 1;  /* This ensures the formBody takes up 50% of the space */
+}
+
+form {
+    background-color: rgb(255, 240, 221);
+    border-radius: 10px;
+    /* border: 2px solid black; */
+    box-shadow: 0 0 10px cyan;
+    width: 80%;
+}
+
+form input {
+    padding: 3px;
+    border-radius: 30px;
+    margin: 7px;
+    border: 3px solid black;
+}
+
+.button {
+    padding: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+    background-color: black;
+    color: aliceblue;
+    transition: 0.3s all ease-in-out;
+}
+
+.button:hover {
+    scale: 1.1;
+    cursor: grab;
+}
+
+.tab {
+    flex: 1;  /* This ensures the tab takes up the other 50% of the space */
+    padding: 20px;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+th,
+td {
+    border: 1px solid #3b2323;
+    padding: 10px;
+    text-align: center; 
+}
+
+th {
+    background-color: #ffd9d9;
+    text-align: center;
+    vertical-align: middle;
+}
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+    <style>
+        body {
+          font-family: 'Poppins', sans-serif;
+          background-color: #f4f6f9;
+          margin: 0;
+          padding: 30px;
+        }
+    
+        h1 {
+          text-align: center;
+          color: #333;
+          margin-bottom: 40px;
+        }
+    
+        table {
+          border-collapse: collapse;
+          margin: auto;
+          width: 90%;
+          max-width: 1200px;
+          background-color: white;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          overflow: hidden;
+        }
+    
+        th, td {
+          text-align: left;
+          padding: 15px 20px;
+        }
+    
+        th {
+          background-color: #4CAF50;
+          color: white;
+          font-weight: 600;
+        }
+    
+        tr:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+    
+        tr:hover {
+          background-color: #f1f1f1;
+        }
+      </style>
+    <title>Entries</title>
+</head>
+<body>
+<center>
+    <h1>Submitted Entries</h1>
+    <table border="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Age</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody id="entriesTableBody"></tbody>
+    </table>
+</center>
+
+<script>
+    // Step 1: Get the "entries" data from localStorage
+    let stored = localStorage.getItem('entries');
+  
+    // Step 2: If we have data, turn it into an array
+    let allEntries = stored ? JSON.parse(stored) : [];
+  
+    // Step 3: Find the table body element
+    let table = document.getElementById('entriesTableBody');
+  
+    // Step 4: Go through each entry and add to table
+    for (let i = 0; i < allEntries.length; i++) {
+      let entry = allEntries[i];
+      
+      let row = document.createElement('tr');
+      row.innerHTML =
+        "<td>" + entry.id + "</td>" +
+        "<td>" + entry.firstName + "</td>" +
+        "<td>" + entry.lastName + "</td>" +
+        "<td>" + entry.email + "</td>" +
+        "<td>" + entry.phone + "</td>" +
+        "<td>" + entry.age + "</td>" +
+        "<td>" + entry.address + "</td>";
+  
+      table.appendChild(row);
+    }
+  </script>
+  
+    
+</body>
+</html>
