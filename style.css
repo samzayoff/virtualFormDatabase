@@ -6,12 +6,13 @@
 }
 
 body {
-    background:url(./pexels-abdoo-31759172.jpg);
+    background: url(./pexels-abdoo-31759172.jpg);
     background-position: center;
-
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .headline {
@@ -28,18 +29,17 @@ body {
 }
 
 .sections {
-    display: flex; 
-    flex-wrap: wrap;  /* Using Flexbox to divide sections into two equal parts */
-    justify-content: space-between;  /* Ensure space is distributed equally */
-    gap: 20px;      /* Optional: space between the two divs */
-    padding: 20px;  /* Optional: adds padding around the container */
-    box-sizing: border-box;  /* Ensures padding doesn't affect width */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .formBody {
     max-width: 600px;
     height: 85vh;
-    /* background-image: url(./blurred-restaurant-background_893571-15162.avif); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,13 +47,15 @@ body {
     padding-top: 20px;
     border-radius: 15px;
     z-index: 1;
-    flex: 1;  /* This ensures the formBody takes up 50% of the space */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
     background-color: rgb(255, 240, 221);
     border-radius: 10px;
-    /* border: 2px solid black; */
     box-shadow: 0 0 10px cyan;
     width: 80%;
 }
@@ -65,22 +67,28 @@ form input {
     border: 3px solid black;
 }
 
+form input:focus,
+.button:focus {
+    outline: 2px solid #00bcd4;
+    outline-offset: 2px;
+}
+
 .button {
     padding: 10px;
     border: 2px solid black;
     font-weight: bold;
     background-color: black;
     color: aliceblue;
-    transition: 0.3s all ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .button:hover {
-    scale: 1.1;
+    transform: scale(1.1);
     cursor: grab;
 }
 
 .tab {
-    flex: 1;  /* This ensures the tab takes up the other 50% of the space */
+    flex: 1;
     padding: 20px;
     background-color: #e3f2fd;
     border-radius: 10px;
@@ -98,7 +106,7 @@ th,
 td {
     border: 1px solid #3b2323;
     padding: 10px;
-    text-align: center; 
+    text-align: center;
 }
 
 th {
@@ -107,4 +115,13 @@ th {
     vertical-align: middle;
 }
 
+@media (max-width: 768px) {
+    .sections {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .formBody, .tab {
+        width: 100%;
+    }
+}
