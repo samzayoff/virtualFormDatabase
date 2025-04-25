@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0d2181fadc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>main</title>
@@ -23,7 +22,6 @@
         <div class="formBody">
             <center>
                 <form method="post" id="reservationForm">
-
                     <label for="FirstName"><b>First name:</b> </label><br>
                     <input type="text" name="firstName" id="firstName" required><br><br>
 
@@ -43,7 +41,6 @@
                     <input type="text" name="address" id="address"><br><br>
 
                     <input type="submit" value="Submit" class="button">
-
                 </form>
             </center>
         </div>
@@ -58,9 +55,7 @@
                     <th>Age:</th>
                     <th>Address:</th>
                 </thead>
-
                 <tbody>
-
                 </tbody>
             </table>
         </div>
@@ -68,49 +63,42 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("reservationForm");
-    const entriesTable = document.getElementById("entriesTable").getElementsByTagName('tbody')[0];
+            const form = document.getElementById("reservationForm");
+            const entriesTable = document.getElementById("entriesTable").getElementsByTagName('tbody')[0];
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent page reload
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
 
-        // Get form input values
-        const firstName = document.getElementById("firstName").value;
-        const lastName = document.getElementById("lastName").value;
-        const email = document.getElementById("email").value;
-        const phone = document.getElementById("phone").value;
-        const age = document.getElementById("age").value;
-        const address = document.getElementById("address").value;
+                const firstName = document.getElementById("firstName").value;
+                const lastName = document.getElementById("lastName").value;
+                const email = document.getElementById("email").value;
+                const phone = document.getElementById("phone").value;
+                const age = document.getElementById("age").value;
+                const address = document.getElementById("address").value;
 
-        // Generate a random ID for the entry
-        const randomId = Math.floor(Math.random() * 1000000); // Random number between 0 and 999999
+                const randomId = Math.floor(Math.random() * 1000000);
 
-        // Create a new row in the table
-        const newRow = entriesTable.insertRow();
+                const newRow = entriesTable.insertRow();
 
-        // Insert new cells in the row and add values to each cell
-        const idCell = newRow.insertCell(0);  // Random ID cell
-        const firstNameCell = newRow.insertCell(1);
-        const lastNameCell = newRow.insertCell(2);
-        const emailCell = newRow.insertCell(3);
-        const phoneCell = newRow.insertCell(4);
-        const ageCell = newRow.insertCell(5);
-        const addressCell = newRow.insertCell(6);
+                const idCell = newRow.insertCell(0);
+                const firstNameCell = newRow.insertCell(1);
+                const lastNameCell = newRow.insertCell(2);
+                const emailCell = newRow.insertCell(3);
+                const phoneCell = newRow.insertCell(4);
+                const ageCell = newRow.insertCell(5);
+                const addressCell = newRow.insertCell(6);
 
-        // Set the text content of each cell
-        idCell.textContent = randomId;  // Random ID in the first column
-        firstNameCell.textContent = firstName;
-        lastNameCell.textContent = lastName;
-        emailCell.textContent = email;
-        phoneCell.textContent = phone;
-        ageCell.textContent = age;
-        addressCell.textContent = address;
+                idCell.textContent = randomId;
+                firstNameCell.textContent = firstName;
+                lastNameCell.textContent = lastName;
+                emailCell.textContent = email;
+                phoneCell.textContent = phone;
+                ageCell.textContent = age;
+                addressCell.textContent = address;
 
-        // Reset form after submission
-        form.reset();
-    });
-});
-
+                form.reset();
+            });
+        });
     </script>
 </body>
 

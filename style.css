@@ -11,8 +11,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 .headline {
@@ -20,6 +18,7 @@ body {
     background-color: black;
     border-radius: 5px;
     font-size: x-large;
+    text-align: center;
 }
 
 .headline h1 {
@@ -39,51 +38,44 @@ body {
 
 .formBody {
     max-width: 600px;
-    height: 85vh;
+    height: auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 22px;
-    padding-top: 20px;
+    padding: 20px;
     border-radius: 15px;
     z-index: 1;
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 form {
     background-color: rgb(255, 240, 221);
     border-radius: 10px;
     box-shadow: 0 0 10px cyan;
-    width: 80%;
+    width: 100%;
+    padding: 20px;
 }
 
 form input {
-    padding: 3px;
+    width: 90%;
+    padding: 10px;
     border-radius: 30px;
-    margin: 7px;
+    margin: 10px 0;
     border: 3px solid black;
 }
 
-form input:focus,
-.button:focus {
-    outline: 2px solid #00bcd4;
-    outline-offset: 2px;
-}
-
 .button {
-    padding: 10px;
+    padding: 10px 20px;
     border: 2px solid black;
     font-weight: bold;
     background-color: black;
     color: aliceblue;
-    transition: transform 0.3s ease-in-out;
+    transition: 0.3s all ease-in-out;
 }
 
 .button:hover {
-    transform: scale(1.1);
+    scale: 1.1;
     cursor: grab;
 }
 
@@ -93,6 +85,7 @@ form input:focus,
     background-color: #e3f2fd;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
 }
 
 table {
@@ -107,6 +100,7 @@ td {
     border: 1px solid #3b2323;
     padding: 10px;
     text-align: center;
+    word-break: break-word;
 }
 
 th {
@@ -115,13 +109,50 @@ th {
     vertical-align: middle;
 }
 
-@media (max-width: 768px) {
+/* Responsive Styles */
+@media (max-width: 992px) {
     .sections {
         flex-direction: column;
         align-items: center;
     }
 
-    .formBody, .tab {
+    .formBody,
+    .tab {
         width: 100%;
+        max-width: none;
+    }
+
+    form input {
+        width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .headline h1 {
+        font-size: 24px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 6px;
     }
 }
